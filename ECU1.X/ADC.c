@@ -1,11 +1,3 @@
-/*
- * File:   ADC.c
- * Author: DELL
- *
- * Created on 7 April, 2026, 12:41 AM
- */
-
-
 #include <xc.h>
 #include "ADC.h"
 

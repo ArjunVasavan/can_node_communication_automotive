@@ -1,8 +1,6 @@
 #ifndef LCD_H
 #define LCD_H
 
-
-
 #define CLCD_PORT			PORTD
 #define CLCD_EN				RC2
 #define CLCD_RS				RC1

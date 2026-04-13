@@ -1,8 +1,3 @@
-/* 
- * File:   
- * Author: 
- */
-
 #ifndef ECU1_SENSOR_H
 #define	ECU1_SENSOR_H
 

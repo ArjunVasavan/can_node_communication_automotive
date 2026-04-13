@@ -1,11 +1,3 @@
-/*
- * File:   main.c
- * Author: DELL
- *
- * Created on 7 April, 2026, 12:53 AM
- */
-
-
 #include "ADC.h"
 #include "CAN.h"
 #include "ECU1_Sensor.h"

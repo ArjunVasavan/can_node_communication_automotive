@@ -1,11 +1,3 @@
-/*
- * File:   ECU1_Sensor.c
- * Author: DELL
- *
- * Created on 7 April, 2026, 12:50 AM
- */
-
-
 #include "ECU1_Sensor.h"
 #include "ADC.h"
 #include "CAN.h"

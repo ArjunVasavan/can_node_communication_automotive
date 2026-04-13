@@ -1,11 +1,3 @@
-/*
- * File:   Matrix_Keypad.c
- * Author: DELL
- *
- * Created on 7 April, 2026, 12:43 AM
- */
-
-
 #include <xc.h>
 #include "Matrix_Keypad.h"
 

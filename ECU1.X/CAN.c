@@ -1,11 +1,3 @@
-/*
- * File:   CAN.c
- * Author: DELL
- *
- * Created on 8 April, 2026, 1:56 PM
- */
-
-
 /*File for CAN configuration , setting message id's, Data Transmission, */
 #include <xc.h>
 #include "CAN.h"

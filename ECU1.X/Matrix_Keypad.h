@@ -1,8 +1,3 @@
-/* 
- * File:   
- * Author: 
- */
-
 #ifndef MATRIX_KEYPAD_H
 #define MATRIX_KEYPAD_H
 	

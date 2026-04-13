@@ -1,11 +1,3 @@
-/*
- * File:   CLCD.c
- * Author: DELL
- *
- * Created on 7 April, 2026, 12:44 AM
- */
-
-
 #include <xc.h>
 #include "CLCD.h"
 

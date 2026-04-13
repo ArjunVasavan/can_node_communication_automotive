@@ -1,8 +1,3 @@
-/* 
- * File:   
- * Author: 
- */
-
 #ifndef MSG_ID_H
 #define	MSG_ID_H
 
