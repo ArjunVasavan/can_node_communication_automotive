@@ -1,0 +1,26 @@
+# ─── MPLAB X Build Artifacts ───────────────────────────────
+**/build/
+**/dist/
+
+# ─── MPLAB X nbproject (all generated/IDE files) ───────────
+**/nbproject/
+
+# ─── Generated Makefiles ────────────────────────────────────
+**/Makefile
+
+# ─── Compiled Object & Binary Files ────────────────────────
+*.o
+*.d
+*.elf
+*.hex
+*.map
+*.cof
+*.unified.stklist
+
+# ─── OS Junk ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+CAN_Based_Automotive_headers/
+
+docs/
