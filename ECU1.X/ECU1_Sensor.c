@@ -4,6 +4,7 @@
 #include "msg_id.h"
 #include "Matrix_Keypad.h"
 #include "clcd.h"
+#include <stdint.h>
 
 char gear[9][3]={"ON","GN","G1","G2","G3","G4","G5","Rr","Cl"};
 int ind = 0;
@@ -25,18 +26,14 @@ uint16_t get_speed()
    str[1]=(speed%10)+48;
    str[2]='\0';
 
-   /* NOTE: SPEED_MSG_ID 
-    * its an macro for SPEED address
-    */
-
-   can_transmit(SPEED_MSG_ID ,str,2);
+   can_transmit(SPEED_MSG_ID ,(const uint8_t*)str,2);
    __delay_ms(20);
-   can_receive(&msg_id,rx1_data,&len1);
+   can_receive(&msg_id,rx1_data,(uint8_t*)&len1);
    rx1_data[len1] = '\0';
 
 
    if(msg_id == SPEED_MSG_ID) {
-       clcd_print("SPEED", LINE1(0));
+       clcd_print((const uint8_t*)"SPEED", LINE1(0));
        clcd_print(rx1_data, LINE2(0));
    }
 
@@ -71,13 +68,13 @@ unsigned char get_gear_pos()
      *
      */
 
-    can_transmit(GEAR_MSG_ID,gear[ind],2);
+    can_transmit(GEAR_MSG_ID,(const uint8_t*)gear[ind],2);
     __delay_ms(20);
-    can_receive(&gear_id,rx2_data,&len2);
+    can_receive(&gear_id,rx2_data,(uint8_t*)&len2);
     rx2_data[len2] = '\0';
     if(gear_id == GEAR_MSG_ID)
     {
-        clcd_print("GEAR", LINE1(9));
+        clcd_print((const unsigned char*)"GEAR", LINE1(9));
         clcd_putch(rx2_data[0], LINE2(9));
         clcd_putch(rx2_data[1], LINE2(10));
     }
