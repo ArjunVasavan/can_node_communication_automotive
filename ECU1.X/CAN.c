@@ -19,7 +19,7 @@ void init_can(void) {
 
     /* Enter CAN module into config mode */
     /* clear previous mode */
-    CAN_SET_OPERATION_MODE_NO_WAIT(e_can_op_mode_config); /* set new mode */
+    CAN_SET_OPERATION_MODE_NO_WAIT(e_can_op_mode_loop); /* set new mode */
 
     /* Wait untill desired mode is set */
     while (CANSTAT != 0x80);

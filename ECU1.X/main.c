@@ -1,26 +1,20 @@
 #include "ADC.h"
 #include "CAN.h"
 #include "ECU1_Sensor.h"
-#include "msg_id.h"
 #include "CLCD.h"
-//#include "uart.h"
 
-
-void init_config()
-{
+void init_config() {
     init_adc();
     init_clcd();
     init_matrix_keypad();
     init_can();
 }
 
-int main()
-{
+int main() {
     init_config();
-    
+
     //Call the functions
-    while(1)
-    {
+    while(1) {
         get_speed();
         get_gear_pos();    
     }

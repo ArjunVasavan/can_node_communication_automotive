@@ -8,7 +8,6 @@
 #define CLCD_BUSY			RD7
 #define PORT_DIR			TRISD7
 
-
 #define HI												1
 #define LO												0
 
@@ -26,6 +25,7 @@
 #define CURSOR_HOME							clcd_write(0x02, INSTRUCTION_COMMAND)
 #define DISP_ON_AND_CURSOR_OFF						clcd_write(0x0C, INSTRUCTION_COMMAND)
 #define EIGHT_BIT_MODE   0x33
+
 void init_clcd(void);
 void clcd_print(const unsigned char *data, unsigned char addr);
 void clcd_putch(const unsigned char data, unsigned char addr);

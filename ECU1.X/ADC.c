@@ -1,8 +1,7 @@
 #include <xc.h>
 #include "ADC.h"
 
-void init_adc(void)
-{
+void init_adc(void) {
 	/* Selecting right justified ADRES Registers order */
 	ADFM = 1;
 
@@ -25,8 +24,6 @@ void init_adc(void)
 	/* Stop the conversion to start with */
 	GODONE = 0;
 
-	
-
 	/* Voltage reference bit as VSS */
 	VCFG1 = 0;
 	/* Voltage reference bit as VDD */
@@ -40,8 +37,7 @@ void init_adc(void)
 	ADON = 1;
 }
 
-unsigned short read_adc(unsigned char channel)
-{
+unsigned short read_adc(unsigned char channel) {
 	unsigned short reg_val;
 
 	/*select the channel*/
@@ -53,5 +49,4 @@ unsigned short read_adc(unsigned char channel)
 	reg_val = (ADRESH << 8) | ADRESL; 
 
 	return reg_val;
-
 }
