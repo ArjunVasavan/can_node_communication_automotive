@@ -1,6 +1,5 @@
 #include <xc.h>
 #include "clcd.h"
-
 void clcd_write(unsigned char byte, unsigned char control_bit)
 {
     CLCD_RS = control_bit;
@@ -17,7 +16,6 @@ void clcd_write(unsigned char byte, unsigned char control_bit)
     CLCD_RW = LO;
     PORT_DIR = OUTPUT;
 }
-
 void init_clcd()
 {
     TRISD = 0x00;
@@ -39,7 +37,6 @@ void init_clcd()
     DISP_ON_AND_CURSOR_OFF;
     __delay_us(100);
 }
-
 void clcd_print(const unsigned char *data, unsigned char addr)
 {
     clcd_write(addr, INSTRUCTION_COMMAND);
@@ -47,13 +44,11 @@ void clcd_print(const unsigned char *data, unsigned char addr)
         clcd_write(*data++, DATA_COMMAND);
     }
 }
-
 void clcd_putch(const unsigned char data, unsigned char addr)
 {
     clcd_write(addr, INSTRUCTION_COMMAND);
     clcd_write(data, DATA_COMMAND);
 }
-
 void clcd_clear()
 {
     clcd_write(0x01, INSTRUCTION_COMMAND);

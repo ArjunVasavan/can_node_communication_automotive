@@ -4,39 +4,30 @@
 #include "msg_id.h"
 #include "can.h"
 #include "clcd.h"
-
 unsigned long int timer_count;
 unsigned char event[9][3] = {"ON","GN","G1","G2","G3","G4","G5","Gr","C_"};
-
 void display_labels(void) {
     clcd_print("SP", LINE1(0));
     clcd_print("GR", LINE1(4));
     clcd_print("RPM", LINE1(8));
     clcd_print("IND", LINE1(13));
 }
-
 void handle_speed_data(uint8_t *data, uint8_t len) {
     clcd_putch(data[0], LINE2(0));
     clcd_putch(data[1], LINE2(1));
 }
-
 void handle_gear_data(uint8_t *data, uint8_t len) {
     if(*data < 9)
         clcd_print(event[*data], LINE2(4));
 }
-
 void handle_rpm_data(uint8_t *data, uint8_t len) {
     data[len] = '\0';
     clcd_print(data, LINE2(8));
 }
-
 void handle_engine_temp_data(uint8_t *data, uint8_t len) {
-    // Not implemented
 }
-
 void handle_indicator_data(uint8_t *data, uint8_t len) {
     int indicator = *data;
-
     if(timer_count <= 10000)
     {
         if(indicator == e_ind_off)
@@ -76,15 +67,12 @@ void handle_indicator_data(uint8_t *data, uint8_t len) {
         clcd_putch(' ', LINE2(15));
     }
 }
-
 void process_canbus_data() {
     uint8_t data[5];
     uint8_t len = 0;
     uint16_t msg_id;
     static int c_flag = 0;
-
     can_receive(&msg_id, data, &len);
-
     if(c_flag == 0)
     {
         if(msg_id == SPEED_MSG_ID) {

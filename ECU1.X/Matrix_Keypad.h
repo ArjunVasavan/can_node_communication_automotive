@@ -1,9 +1,7 @@
 #ifndef MATRIX_KEYPAD_H
 #define MATRIX_KEYPAD_H
-	
 #define MAX_ROW				4
 #define MAX_COL				3
-
 #define STATE_CHANGE				1
 #define LEVEL_CHANGE				0
 #define MATRIX_KEYPAD_PORT			PORTB
@@ -14,8 +12,6 @@
 #define COL3					PORTBbits.RB3
 #define COL2					PORTBbits.RB2
 #define COL1					PORTBbits.RB1
-
-
 #define MK_SW1					1
 #define MK_SW2					2
 #define MK_SW3					3
@@ -28,14 +24,10 @@
 #define MK_SW10				10
 #define MK_SW11				11
 #define MK_SW12				12
-
 #define ALL_RELEASED	0xFF
-
 #define HI				1
 #define LO				0
-
 void init_matrix_keypad(void);
 unsigned char scan_key(void);
 unsigned char read_switches(unsigned char detection_type);
-
 #endif
