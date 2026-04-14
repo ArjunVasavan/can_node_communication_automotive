@@ -59,24 +59,8 @@ unsigned char get_gear_pos() {
         ind=8;
     }
 
-    can_transmit(GEAR_MSG_ID,(const uint8_t*)gear[ind],2);
+    can_transmit(GEAR_MSG_ID,(const uint8_t*)&ind,1);
     __delay_ms(80);
 
-    // TODO: When using CAN for ECU3 comment ↓
-
-
-    // can_receive(&gear_id,rx2_data,(uint8_t*)&len2);
-    // rx2_data[len2] = '\0';
-    // if(gear_id == GEAR_MSG_ID) {
-    //     clcd_print((const unsigned char*)"GEAR", LINE1(9));
-    //     clcd_putch(rx2_data[0], LINE2(9));
-    //     clcd_putch(rx2_data[1], LINE2(10));
-    // }
-
-
-    // TODO: comment till here ↑
-
-
     return gear[ind][0];
-
 }

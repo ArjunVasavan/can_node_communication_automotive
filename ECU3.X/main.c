@@ -27,6 +27,7 @@ static void init_config(void) {
 void main(void) {
     // Initialize peripherals
     init_config();
+    display_labels();
 
     /* ECU1 main loop */
     while (1) {

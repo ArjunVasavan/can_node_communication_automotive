@@ -26,7 +26,8 @@
 typedef enum {
     e_ind_off,
     e_ind_left,
-    e_ind_right
+    e_ind_right,
+    e_ind_hazard
 } IndicatorStatus;
 
 extern volatile IndicatorStatus prev_ind_status, cur_ind_status;

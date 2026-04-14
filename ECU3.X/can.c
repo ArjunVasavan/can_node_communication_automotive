@@ -42,6 +42,8 @@ void init_can(void) {
 
     /* Set Receive Mode for buffers */
     RXB0CON = 0x00;
+    RXB0CONbits.RXM0 = 1;
+    RXB0CONbits.RXM1 = 1;
 }
 
 static uint16_t get_msg_id_std(void) {

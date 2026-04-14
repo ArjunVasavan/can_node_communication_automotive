@@ -19,7 +19,7 @@ void init_can(void) {
 
     /* Enter CAN module into config mode */
     /* clear previous mode */
-    CAN_SET_OPERATION_MODE_NO_WAIT(e_can_op_mode_loop); /* set new mode */
+    CAN_SET_OPERATION_MODE_NO_WAIT(e_can_op_mode_config); /* set new mode */
 
     /* Wait untill desired mode is set */
     while (CANSTAT != 0x80);
@@ -38,7 +38,7 @@ void init_can(void) {
      */
     RXFCON0 = 0x00;
     /* Enter CAN module into Loop back mode */
-    CAN_SET_OPERATION_MODE_NO_WAIT(e_can_op_mode_loop);
+    CAN_SET_OPERATION_MODE_NO_WAIT(e_can_op_mode_normal);
 
     /* Set Receive Mode for buffers */
     RXB0CON = 0x00;
@@ -69,7 +69,7 @@ void can_transmit(uint16_t msg_id, const uint8_t *data, uint8_t len) {
     set_msg_id_std(msg_id);
 
     // Set data length
-    TXB0DLC = len+48;
+    TXB0DLC = len;
     /* Send the data by writing the bytes to individual 
      *  TXB0D0, TXB0D1 .... TXB0D7
      * Max len should be 8 (No error handing here :(

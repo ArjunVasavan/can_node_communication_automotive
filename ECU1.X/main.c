@@ -5,7 +5,6 @@
 
 void init_config() {
     init_adc();
-    // init_clcd();  // TODO: CAN txrx doesnt need clcd
     init_matrix_keypad();
     init_can();
 }

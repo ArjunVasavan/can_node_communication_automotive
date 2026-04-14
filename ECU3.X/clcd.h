@@ -1,6 +1,10 @@
 #ifndef LCD_H
 #define LCD_H
 
+#define _XTAL_FREQ 20000000
+#define EIGHT_BIT_MODE 0x33
+void clcd_clear(void);
+
 #define CLCD_PORT			PORTD
 #define CLCD_EN				RC2
 #define CLCD_RS				RC1
