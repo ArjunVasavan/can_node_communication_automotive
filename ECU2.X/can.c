@@ -1,6 +1,6 @@
 #include <xc.h>
-#include "CAN.h"
-#include "CLCD.h"
+#include "clcd.h"
+#include "can.h"
 typedef enum _CanOpMode {
     e_can_op_mode_normal = 0x00,
     e_can_op_mode_loop = 0x40,

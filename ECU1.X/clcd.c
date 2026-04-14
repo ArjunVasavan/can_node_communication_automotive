@@ -1,5 +1,5 @@
 #include <xc.h>
-#include "CLCD.h"
+#include "clcd.h"
 void clcd_write(unsigned char byte, unsigned char control_bit)
 {
 	CLCD_RS = control_bit;

@@ -1,6 +1,6 @@
 
 #include <xc.h>
-#include "Digital_Keypad.h"
+#include "digital_keypad.h"
 void init_digital_keypad(void)
 {
 	TRISC = TRISC | INPUT_PINS;

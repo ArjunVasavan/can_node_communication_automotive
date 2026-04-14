@@ -1,9 +1,8 @@
-
-#include "ECU2_Sensor.h"
-#include "ADC.h"
 #include "can.h"
+#include "ecu2_sensor.h"
+#include "adc.h"
 #include "msg_id.h"
-#include "Digital_Keypad.h"
+#include "digital_keypad.h"
 #include <stdint.h>
 char status;
 uint16_t get_rpm()

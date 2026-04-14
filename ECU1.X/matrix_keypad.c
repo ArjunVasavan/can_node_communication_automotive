@@ -1,5 +1,5 @@
 #include <xc.h>
-#include "Matrix_Keypad.h"
+#include "matrix_keypad.h"
 void init_matrix_keypad(void)
 {
     ADCON1 = 0x0F;

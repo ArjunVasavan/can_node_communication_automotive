@@ -2,7 +2,7 @@
 #ifndef ECU2_SENSOR_H
 #define	ECU2_SENSOR_H
 #include <stdint.h>
-#include "Digital_Keypad.h"
+#include "digital_keypad.h"
 #include <xc.h>
 #define RPM_ADC_CHANNEL 0x04
 #define ENG_TEMP_ADC_CHANNEL 0x06

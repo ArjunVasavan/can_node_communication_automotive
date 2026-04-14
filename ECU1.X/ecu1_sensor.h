@@ -1,7 +1,7 @@
 #ifndef ECU1_SENSOR_H
 #define	ECU1_SENSOR_H
 #include <stdint.h>
-#include "Matrix_Keypad.h"
+#include "matrix_keypad.h"
 #include <xc.h>
 #define MAX_GEAR 6
 #define SPEED_ADC_CHANNEL 0x04

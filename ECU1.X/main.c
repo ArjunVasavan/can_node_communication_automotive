@@ -1,7 +1,7 @@
-#include "ADC.h"
-#include "CAN.h"
-#include "ECU1_Sensor.h"
-#include "CLCD.h"
+#include "adc.h"
+#include "can.h"
+#include "ecu1_sensor.h"
+#include "clcd.h"
 void init_config() {
     init_adc();
     init_matrix_keypad();

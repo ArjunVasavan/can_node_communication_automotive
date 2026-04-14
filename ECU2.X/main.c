@@ -1,8 +1,8 @@
-#include "ECU2_Sensor.h"
-#include "ADC.h"
-#include "can.h"
+#include "ecu2_sensor.h"
+#include "adc.h"
 #include "msg_id.h"
 #include "clcd.h"
+#include "can.h"
 void init_ssd()
 {
     TRISD = 0x00;          
