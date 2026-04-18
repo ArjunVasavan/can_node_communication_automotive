@@ -4,6 +4,8 @@
 #include "msg_id.h"
 #include "digital_keypad.h"
 #include <stdint.h>
+#define _XTAL_FREQ 8000000
+
 char status;
 uint16_t get_rpm()
 {
@@ -18,6 +20,7 @@ uint16_t get_rpm()
     }
     data[i] = '\0';
     can_transmit(RPM_MSG_ID, data, i + 1);
+     __delay_ms(20);
     return rpm;
 }
 
@@ -32,5 +35,6 @@ IndicatorStatus process_indicator()
         else if(key == SWITCH4) indicator = e_ind_off;
     }
     can_transmit(INDICATOR_MSG_ID, (uint8_t*)&indicator, 1);
+     __delay_ms(20);
     return indicator;
 }

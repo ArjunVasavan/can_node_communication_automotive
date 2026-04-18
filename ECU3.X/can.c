@@ -57,5 +57,5 @@ void can_receive(uint16_t *msg_id, uint8_t *data, uint8_t *len) {
         RXB0FUL = 0; 
         RXB0IF = 0; 
     }
-    *len = 0;
+   // *len = 0;
 }
