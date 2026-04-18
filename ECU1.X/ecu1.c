@@ -14,8 +14,7 @@ char len1;
 uint16_t gear_id;
 uint8_t rx2_data[4];
 char len2;
-uint16_t get_speed()
-{
+uint16_t get_speed() {
     char str[3];
    unsigned short speed= read_adc(CHANNEL4)/10.33;
    str[0]=(speed/10)+48;

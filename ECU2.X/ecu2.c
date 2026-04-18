@@ -7,8 +7,7 @@
 #define _XTAL_FREQ 8000000
 
 char status;
-uint16_t get_rpm()
-{
+uint16_t get_rpm() {
     unsigned char data[5] = {0x00};
     unsigned int rpm = ((unsigned long)read_adc(CHANNEL4) * 6000) / 1023;
     int i = 0, num = rpm;
@@ -24,8 +23,7 @@ uint16_t get_rpm()
     return rpm;
 }
 
-IndicatorStatus process_indicator()
-{
+IndicatorStatus process_indicator() {
     static int indicator = 0x00, key;
     key = read_digital_keypad(STATE_CHANGE);
     if(key != ALL_RELEASED) {

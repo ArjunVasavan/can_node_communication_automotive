@@ -1,8 +1,7 @@
 
 #include <xc.h>
 #include "adc.h"
-void init_adc(void)
-{
+void init_adc(void) {
 	ADFM = 1;
 	
 	ACQT2 = 0;
@@ -19,8 +18,7 @@ void init_adc(void)
 	ADRESL = 0;
 	ADON = 1;
 }
-unsigned short read_adc(unsigned char channel)
-{
+unsigned short read_adc(unsigned char channel) {
 	unsigned short reg_val;
 	ADCON0 = (ADCON0 & 0xC3) | (channel << 2);
 	GO = 1;
